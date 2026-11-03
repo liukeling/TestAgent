@@ -10,6 +10,13 @@ from utils.session_tools import session_chat
 
 app = FastAPI(title="Test")
 
+#全局知识库加载 D:\\ragFiles\\fileName  @{chromadb_tools.filePath}
+@app.get("/testLoadRag")
+def testLoadRag(fileName:str):
+    chunks = []
+    if fileName:
+        chunks = loadFiles_check(fileName)
+    return chunks
 #测试对话 - 简单对话
 @app.get("/chatTest")
 def chatTest(msg:str):

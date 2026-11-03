@@ -16,7 +16,7 @@ collection = client.get_or_create_collection(name="test_base")
 filePath = "D:\\ragFiles\\";
 splitter = RecursiveCharacterTextSplitter(chunk_size=600,chunk_overlap=120)
 
-#配置读写- 用于储存当前路径{@filePath}下 文档的加载信息
+#配置读写- 用于储存当前路径{@filePath}下 文档的加载信息 
 local_file_properties = "load_infos.json"
 def load_info():
     full_file_path = os.path.join(filePath, local_file_properties);
