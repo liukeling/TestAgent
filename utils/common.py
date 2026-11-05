@@ -17,7 +17,7 @@ def queryInfos(msg:str):
     q_ver = ollama_embed([msg])
     res = collection.query(
         query_embeddings=q_ver,
-        n_results=12
+        n_results=3
     )
     return res
 #解析callTool 参数：resp 模型返回数据，解析他是否需要调用tool; toolMsgs函数词条
